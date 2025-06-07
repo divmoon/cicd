@@ -17,6 +17,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Run regression tests
         run: ./gradlew clean test -Dgroups=regression
 

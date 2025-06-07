@@ -26,6 +26,8 @@ jobs:
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Run smoke tests
         run: ./gradlew clean test -Dgroups=smoke
 
